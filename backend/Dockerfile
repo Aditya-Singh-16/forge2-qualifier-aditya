@@ -16,9 +16,11 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
+
 RUN mkdir -p database
 RUN touch database/database.sqlite
 
 EXPOSE 10000
 
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+CMD touch database/database.sqlite && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+
