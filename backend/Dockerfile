@@ -4,9 +4,9 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     libzip-dev \
-    zip \
-    sqlite3 \
-    && docker-php-ext-install zip pdo pdo_sqlite
+    zip
+
+RUN docker-php-ext-install zip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -21,4 +21,4 @@ RUN touch database/database.sqlite
 
 EXPOSE 10000
 
-CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+CMD php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
