@@ -1,44 +1,103 @@
-# Kanban Board – Forge 2 Qualifier
+# 🚀 Kanban Board – Forge 2 Qualifier
 
-A Trello-style Kanban board built using Laravel and React as part of the Forge 2 Qualifier assignment.
+A Trello-style Kanban Board built as part of the Forge 2 Qualifier assignment using Laravel, React, OpenClaw, and Hermes Agent.
 
-## Features
+---
+
+# Live Demo
+
+Frontend (Vercel)
+
+ https://forge2-qualifier-aditya-iouiuohrz-aditya-16.vercel.app
+
+Backend API (Render)
+
+https://kanban-board-ndn9.onrender.com
+
+---
+
+# Features
 
 * Create tasks
-* Move tasks between columns
-
-  * To Do
-  * In Progress
-  * Done
+* Update tasks
 * Delete tasks
+* Move tasks between workflow columns
+* To Do / In Progress / Done workflow
 * Laravel REST API backend
-* React frontend
+* React frontend UI
 * OpenClaw Slack integration
-* Hermes Agent integration with memory, skills, and autonomous workflows
+* Hermes Agent integration
+* Persistent memory support
+* Autonomous workflows
+* Custom skills support
 
-## Tech Stack
+---
 
-### Backend
+# Tech Stack
+
+## Backend
 
 * Laravel 13
 * PHP 8.3
-* SQLite
+* SQLite (Development)
+* PostgreSQL (Production / Render)
 
-### Frontend
+## Frontend
 
 * React
 * Vite
 * Axios
 
-### AI Agents
+## AI Agents
 
-* OpenClaw
-* Hermes Agent
-* Slack Integration
+### Hermes Agent
+
+Provider: Google Gemini
+
+Model:
+
+gemini-2.5-flash
+
+Capabilities:
+
+* Persistent memory
+* Project planning
+* Autonomous execution
+* Skill execution
+* Progress tracking
+
+### OpenClaw
+
+Provider: Google Gemini
+
+Model:
+
+gemini-2.5-flash
+
+Capabilities:
+
+* Coding assistance
+* Slack integration
+* Development workflows
+* Project execution
 
 ---
 
-## Project Structure
+# Architecture
+
+Slack
+↓
+Hermes Agent (Brain)
+↓
+OpenClaw (Hands)
+↓
+GitHub Repository
+↓
+Laravel API + React Frontend
+
+---
+
+# Project Structure
 
 ```text
 ai-assignment/
@@ -60,16 +119,19 @@ ai-assignment/
 
 ---
 
-## Installation
+# Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/Aditya-Singh-16/forge2-qualifier-aditya.git
+
 cd forge2-qualifier-aditya
 ```
 
-### Backend Setup
+---
+
+## Backend Setup
 
 ```bash
 cd backend
@@ -85,7 +147,7 @@ php artisan migrate
 php artisan serve
 ```
 
-Backend runs on:
+Backend URL
 
 ```text
 http://127.0.0.1:8001
@@ -93,7 +155,7 @@ http://127.0.0.1:8001
 
 ---
 
-### Frontend Setup
+## Frontend Setup
 
 ```bash
 cd frontend
@@ -103,7 +165,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs on:
+Frontend URL
 
 ```text
 http://localhost:5176
@@ -111,7 +173,7 @@ http://localhost:5176
 
 ---
 
-## API Endpoints
+# API Endpoints
 
 | Method | Endpoint        | Description   |
 | ------ | --------------- | ------------- |
@@ -122,19 +184,33 @@ http://localhost:5176
 
 ---
 
-## Hermes Agent
+# Hermes Agent
 
 Hermes was configured with:
 
 * Persistent memory
-* Status report skill
 * Slack integration
-* Autonomous task execution support
+* Status-report skill
+* Autonomous workflow support
+* Project planning
 
-Example skill:
+## Memory Verification
+
+Hermes successfully stored and recalled project information across separate sessions.
+
+Stored Information:
+
+* Repository: forge2-qualifier-aditya
+* Default Branch: main
+
+---
+
+# Status Report Skill
+
+Location:
 
 ```text
-status-report
+skills/status-report/SKILL.md
 ```
 
 Provides:
@@ -145,25 +221,51 @@ Provides:
 
 ---
 
-## OpenClaw
+# Autonomous Workflow
+
+Hermes is configured to perform autonomous project monitoring and can post progress updates to Slack without manual prompting.
+
+---
+
+# OpenClaw
 
 OpenClaw is connected to Slack and can:
 
 * Execute coding tasks
 * Generate code suggestions
 * Assist with project workflows
+* Support repository development
 
 ---
 
-## Screenshots
+# Screenshots
 
-Add screenshots here after deployment.
+Include the following screenshots before final submission:
+
+* Hermes memory recall
+* Hermes autonomous workflow
+* OpenClaw Slack interaction
+* Kanban board UI
+* Render deployment
+* Vercel deployment
 
 ---
 
-## Author
+# GitHub Repository
+
+Repository:
+
+https://github.com/Aditya-Singh-16/forge2-qualifier-aditya
+
+---
+
+# Author
 
 Aditya Singh
+
+B.Tech Computer Science (Artificial Intelligence)
+
+Pranveer Singh Institute of Technology
 
 GitHub:
 https://github.com/Aditya-Singh-16
