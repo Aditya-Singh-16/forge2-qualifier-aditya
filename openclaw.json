@@ -1,0 +1,17 @@
+{
+"defaultModel": "google/gemini-2.5-flash",
+"channels": {
+"slack": true
+},
+"agents": {
+"main": {
+"provider": "google",
+"model": "gemini-2.5-flash"
+}
+},
+"secrets": {
+"google_api_key": "<removed>",
+"slack_bot_token": "<removed>",
+"slack_app_token": "<removed>"
+}
+}
